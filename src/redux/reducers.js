@@ -17,7 +17,6 @@ export const campersSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(getCampersThunk.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.campers.items = action.payload;
       })
       .addMatcher(getActions("pending"), (state) => {

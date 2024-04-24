@@ -5,18 +5,12 @@ const mockApi = axios.create({ baseURL: BASE_URL });
 
 export const fetchCampers = () => {
   const data = mockApi.get("/advert");
-  console.log(data);
   return data;
 };
 
-// export const addContactFech = (contact) => {
-//   const data = mockApi.post("/contacts", { ...contact });
+// export const getCamper = (id) => {
+//   const data = mockApi.get(`/advert/${id}`);
+//   console.log(data);
 //   return data;
 // };
-
-export const getCamper = (id) => {
-  const data = mockApi.get(`/advert/${id}`);
-  console.log(data);
-  return data;
-};
-getCamper(1);
+// getCamper(1);

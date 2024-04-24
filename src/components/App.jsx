@@ -16,7 +16,7 @@ export const App = () => {
   }, [dispatch]);
 
   // const campers = getCampersThunk();
-  console.log(campers);
+  // console.log(campers);
   return <CampersList campers = {campers}></CampersList>;
 }
 
