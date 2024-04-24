@@ -56,13 +56,12 @@ stroke="currentColor"
           height="20"
           />kitchen</li>)}
       <li><Icons name="beds"
-          color="black"
+      stroke="none"
           width="20"
           height="20"
           />{details.beds} beds</li>
       {details.airConditioner && (<li><Icons name="ac"
-          // color="currentColor"
-          // stroke="currentColor"
+     
           width="20"
           height="20"
           />AC</li>)}

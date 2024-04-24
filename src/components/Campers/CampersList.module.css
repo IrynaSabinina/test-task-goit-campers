@@ -20,11 +20,22 @@
   display: flex;
   gap: 8px;
   list-style: none;
+
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
 .detailsList li {
+  display: flex;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: center;
   padding: 12px 18px 12px 18px;
   background-color: rgba(242, 244, 247, 1);
   border-radius: 100px;
+}
+.detailsList li svg {
+  margin-right: 8px;
 }
 .btnShowMore {
   padding: 16px 40px 16px 40px;
@@ -33,6 +44,11 @@
   border: none;
   color: white;
   max-width: 166px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
 }
 .campersItem h2 {
   font-family: "Inter";
@@ -71,6 +87,6 @@
 .locationBlock p:not(:last-child) {
   margin-right: 16px;
 }
-.locationBlock p:first-child {
+.locationBlock p svg {
   margin-right: 4px;
 }
