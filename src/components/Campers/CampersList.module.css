@@ -1,0 +1,76 @@
+.campersList {
+}
+.campersItem {
+  display: flex;
+  padding: 24px;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 20px;
+}
+.campersItem:not(:last-child) {
+  margin-bottom: 32px;
+}
+.camperImg {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 24px;
+}
+.detailsList {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+.detailsList li {
+  padding: 12px 18px 12px 18px;
+  background-color: rgba(242, 244, 247, 1);
+  border-radius: 100px;
+}
+.btnShowMore {
+  padding: 16px 40px 16px 40px;
+  background-color: rgba(228, 72, 72, 1);
+  border-radius: 200px;
+  border: none;
+  color: white;
+  max-width: 166px;
+}
+.campersItem h2 {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  margin-top: 0;
+}
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 310px;
+}
+.titleBlock {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: rgba(16, 24, 40, 1);
+  display: flex;
+  justify-content: space-between;
+}
+
+.locationBlock {
+  display: flex;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.locationBlock p {
+  display: flex;
+  justify-content: baseline;
+}
+
+.locationBlock p:not(:last-child) {
+  margin-right: 16px;
+}
+.locationBlock p:first-child {
+  margin-right: 4px;
+}
