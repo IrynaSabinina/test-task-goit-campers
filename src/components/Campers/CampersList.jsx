@@ -2,23 +2,36 @@ import { CamperItem } from "./Camper";
 import {campersSelector, selectCategory} from "../../redux/selectors"
 import { useSelector } from 'react-redux';
 import styles from './CampersList.module.css';
-export const CampersList = () => {
-  const campers = useSelector(campersSelector)
-  // console.log(visibleCampers)
-//   let page = 1;
-//   let visibleCampers = campers.slice(0,page*4);
-// function pagination(){
-  
-// page = page++;
-// console.log(page)
-//   return visibleCampers = campers.slice(0,(page*4))
+import { useEffect, useState } from "react";
 
-// }
-// console.log(visibleCampers)
+export const CampersList = () => {
+const BtnPagination = document.getElementById("paginationBtn")
+  const campers = useSelector(campersSelector)
+   
+
+const [page, setPage] = useState(1)
+  let visibleCampers = campers.slice(0,page*4);
+
+ useEffect(() => {
+ visibleCampers=campers.slice(0,(page*4))
+ if (page===4)
+    {BtnPagination.disabled = true;}
+  }, [page]);
+
+
+const pagination=(e)=>{
+  e.preventDefault();
+  console.log(visibleCampers.leght)
+  if (page < 4){
+    setPage(page => page+1);
+    return visibleCampers = campers.slice(0,page*4);
+  } 
+}
+
   return (
     <div >
       <ul className={styles.campersList}>
-        {campers.map(({_id, name, gallery,adults, price,engine,transmission, rating,location, description, details, reviews}) => {
+        {visibleCampers.map(({_id, name, gallery,adults, price,engine,transmission, rating,location, description, details, reviews}) => {
           return (
             <CamperItem
               key={_id}
@@ -46,7 +59,7 @@ export const CampersList = () => {
           );
         })}
       </ul>
-      {/* <button type="button" onClick={pagination}> Load more</button> */}
+      <button type="button" onClick={pagination} id="paginationBtn"> Load more</button>
     </div>
   );
 };
