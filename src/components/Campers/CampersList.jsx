@@ -3,9 +3,11 @@ import {campersSelector, selectCategory} from "../../redux/selectors"
 import { useSelector } from 'react-redux';
 import styles from './CampersList.module.css';
 import { useEffect, useState } from "react";
+import { Modal } from "../Modal/Modal";
 
 export const CampersList = () => {
 const BtnPagination = document.getElementById("paginationBtn")
+
   const campers = useSelector(campersSelector)
    
 
@@ -60,6 +62,7 @@ const pagination=(e)=>{
         })}
       </ul>
       <button type="button" onClick={pagination} id="paginationBtn"> Load more</button>
+       <Modal id={"2"}></Modal>
     </div>
   );
 };

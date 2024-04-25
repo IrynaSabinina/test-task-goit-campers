@@ -1,0 +1,63 @@
+.backdrop {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 110;
+  background-color: rgba(17, 18, 19, 0.4);
+  scroll-behavior: smooth;
+}
+.container {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  width: 982px;
+  height: 720px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+}
+.locationBlock {
+  display: flex;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+
+  /* gap: 16px; */
+}
+.camperImgModal {
+  width: 290px;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 10px;
+  /* margin-right: 24px; */
+}
+.clientsBlockHeaders {
+  margin-top: 44px;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.2);
+}
+
+.clientsBlockHeaders button {
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(16, 24, 40, 1);
+  padding-bottom: 24px;
+}
+.clientsBlockHeaders button:hover,
+.clientsBlockHeaders button:active,
+.clientsBlockHeaders button:focus {
+  border-bottom: 5px solid rgba(228, 72, 72, 1);
+}

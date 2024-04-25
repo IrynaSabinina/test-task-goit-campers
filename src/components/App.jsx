@@ -5,6 +5,7 @@ import { fetchCampers } from "../API/helpers";
 import { getCampersThunk } from "../redux/thunks";
 import {campersSelector} from "../redux/selectors"
 import { CampersList } from "./Campers/CampersList";
+import { Modal } from "./Modal/Modal";
 // import "./App.css";
 
 export const App = () => {
@@ -17,7 +18,10 @@ export const App = () => {
 
   // const campers = getCampersThunk();
   // console.log(campers);
-  return <CampersList campers = {campers}></CampersList>;
+  return <>
+  <CampersList campers = {campers}></CampersList>;
+ 
+  </>
 }
 
 

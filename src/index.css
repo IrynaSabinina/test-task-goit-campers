@@ -10,6 +10,7 @@ body {
 
   font-family: "Roboto", sans-serif;
 }
+
 .hidden {
   overflow: hidden;
 }
@@ -38,4 +39,8 @@ li {
   margin: 0;
   padding: 0;
   text-decoration: none;
+}
+button {
+  background: transparent;
+  border: none;
 }

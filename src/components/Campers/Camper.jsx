@@ -4,11 +4,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { campersSelector } from '../../redux/selectors';
 
 import { Icons } from '../../images/icons.js';
+import { Modal } from '../Modal/Modal';
 // import { deleteContactThunk } from '../../redux/thunks/thunks';
 
 export const CamperItem = ({ id, name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews }) => {
+const BtnModal = document.querySelector(`#button${id}`)
+
+// console.log(BtnModal)
+const hendlerModalOpen =(e) =>{
+// console.log(e.target.id)
 
  
+e.preventDefault()
+console.log(id)
+}
   return (
     <li className={styles.campersItem} id ={id} >
       <img className={styles.camperImg} src={gallery[0]} alt={name} />
@@ -66,7 +75,7 @@ stroke="currentColor"
           height="20"
           />AC</li>)}
      </ul>
-     <button className={styles.btnShowMore} type="button" >Show more</button>
+     <button className={styles.btnShowMore} type="button" id={`button${id}`} onClick={hendlerModalOpen}>Show more</button>
 </div>
     </li>
   );
