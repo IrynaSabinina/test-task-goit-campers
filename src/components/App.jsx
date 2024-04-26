@@ -15,7 +15,7 @@ export const App = () => {
   localStorage.setItem("favoritesId", JSON.stringify([]));
 
   const dispatch = useDispatch();
-const url ="test-task-goit-campers"
+
   useEffect(() => {
     dispatch(getCampersThunk());
   }, [dispatch]);
