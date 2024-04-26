@@ -24,11 +24,11 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/favorites" element={<FavoriteList />} />
+        <Route path="/test-task-goit-campers" element={<HomePage />} />
+        <Route path="/test-task-goit-campers/catalog" element={<Catalog />} />
+        <Route path="/test-task-goit-campers/favorites" element={<FavoriteList />} />
 
-        <Route path="*" element={<NotFound />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </>
   );

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import styles from"../Home/HomePage.module.css";
 import { CamperItem } from "../../components/Campers/Camper";
 import { campersSelector } from "../../redux/selectors";
 import { useSelector } from "react-redux";
@@ -81,7 +81,7 @@ export const FavoriteList = () => {
   localStorage.setItem("favorites", JSON.stringify(favList));
 
   return (
-    <>
+    <div className={styles.homeContainer} >
       <Header />
       {favoritesId.length ? (<ul>
         {favList.map(
@@ -125,6 +125,6 @@ export const FavoriteList = () => {
      ) :<p>this list still empry! Try to add 1 st Camper here!</p>  }
       {id && <ModalSuccess id={id} closeModal={closeModal} />}
       
-    </>
+    </div>
   );
 };

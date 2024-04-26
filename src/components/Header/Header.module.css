@@ -1,18 +1,39 @@
-button {
-  padding: 0;
-}
+.headerButton {
+  padding: 16px 40px 16px 40px;
+  background-color: white;
+  border-radius: 200px;
+  border: 1px solid rgba(71, 84, 103, 0.2);
 
+  max-width: 166px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
+}
+.headerButton:hover {
+  background-color: rgba(228, 72, 72, 1);
+  color: white;
+}
 p {
   margin: 0;
   padding: 0;
 }
 
 header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
   padding: 0 20px;
   background-color: white;
   border-bottom: 1px solid rgba(247, 247, 247, 1);
+  margin-bottom: 24px;
 }
-link {
-  font-style: none;
+header ul {
+  display: flex;
+}
+li {
+  list-style: none;
+  margin-right: 24px;
 }

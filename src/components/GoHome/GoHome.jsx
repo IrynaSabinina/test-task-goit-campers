@@ -4,7 +4,7 @@ import styles from "../Campers/CampersList.module.css"
 export const GoHome = () => {
   return (
     <button className={styles.BtnPagination}>
-      <Link to="/"> Go Home</Link>
+      <Link to="/test-task-goit-campers/"> Go Home</Link>
     </button>
   );
 };

@@ -9,6 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   font-family: "Roboto", sans-serif;
+  color: rgba(16, 24, 40, 1);
 }
 
 .hidden {
@@ -43,4 +44,16 @@ li {
 button {
   background: transparent;
   border: none;
+}
+header {
+  margin-bottom: 24px;
+}
+a {
+  color: rgba(16, 24, 40, 1);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  cursor: pointer;
 }

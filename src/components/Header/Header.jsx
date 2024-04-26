@@ -1,24 +1,31 @@
-import { Link } from 'react-router-dom';
-import styles from "../Campers/CampersList.module.css"
-export const Header =()=>{
-    return (
-       
-        <header>
-             <button className={styles.BtnPagination} type="button">
-
-        <Link to="/">Home</Link>
+import { Link } from "react-router-dom";
+import styles from "./Header.module.css";
+export const Header = () => {
+  return (
+    <header>
+      <ul>
+        <li>
+          <Link to="/test-task-goit-campers/">
+            <button className={styles.headerButton} type="button">
+              Home{" "}
             </button>
-          
-            <button className={styles.BtnPagination} type="button">
-
-        <Link to="/catalog">Catalog</Link>
+          </Link>
+        </li>
+        <li>
+          <Link to="/test-task-goit-campers/catalog">
+            <button className={styles.headerButton} type="button">
+              Catalog{" "}
             </button>
-            <button className={styles.BtnPagination} type="button">
-
-
-        <Link to="/favorites">Favorites</Link>
+          </Link>
+        </li>
+        <li>
+          <Link to="/test-task-goit-campers/favorites">
+            <button className={styles.headerButton} type="button">
+              Favorites
             </button>
-        </header>
-       
-    )
-}
+          </Link>
+        </li>
+      </ul>
+    </header>
+  );
+};
