@@ -24,9 +24,9 @@ const url ="test-task-goit-campers"
   return (
     <>
       <Routes>
-        <Route path="/url/" element={<HomePage />} />
-        <Route path="/url/catalog" element={<Catalog />} />
-        <Route path="/url/favorites" element={<FavoriteList />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/favorites" element={<FavoriteList />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
