@@ -15,7 +15,7 @@ export const App = () => {
   localStorage.setItem("favoritesId", JSON.stringify([]));
 
   const dispatch = useDispatch();
-
+const url ="test-task-goit-campers"
   useEffect(() => {
     dispatch(getCampersThunk());
   }, [dispatch]);
@@ -24,9 +24,9 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/favorites" element={<FavoriteList />} />
+        <Route path="/url/" element={<HomePage />} />
+        <Route path="/url/catalog" element={<Catalog />} />
+        <Route path="/url/favorites" element={<FavoriteList />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
