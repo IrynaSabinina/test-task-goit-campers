@@ -1,37 +1,41 @@
 import PropTypes from 'prop-types';
 import styles from './CampersList.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { campersSelector } from '../../redux/selectors';
-
 import { Icons } from '../../images/icons.js';
-import { Modal } from '../Modal/Modal';
-// import { deleteContactThunk } from '../../redux/thunks/thunks';
+import { useEffect, useState } from 'react';
 
-export const CamperItem = ({ id, name, price, rating, location, adults, children, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews }) => {
-const BtnModal = document.querySelector(`#button${id}`)
 
-// console.log(BtnModal)
-const hendlerModalOpen =(e) =>{
-// console.log(e.target.id)
 
+export const CamperItem = ({ favoritsListHendler, togelModal,id, name, price, rating, location, adults, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews }) => {
+  const favoritList = JSON.parse(localStorage.getItem("favoritesId"))
+  console.log(favoritList)
+  console.log(id)
+
+ const [inFavoriteList, setInFavoriteList] = useState(favoritList.includes(id) )
+ useEffect (() => {
+
+  favoritList.includes(id) ? setInFavoriteList(true):setInFavoriteList(false)
+  
+
+  }, []);
  
-e.preventDefault()
-console.log(id)
-}
+  
   return (
     <li className={styles.campersItem} id ={id} >
       <img className={styles.camperImg} src={gallery[0]} alt={name} />
 <div className={styles.infoBlock}>
 <div className={styles.titleBlock}>
 
-     <h2>{name}</h2>  <p>€{price} <Icons name="favorite"
-stroke="currentColor"
+     <h2>{name}</h2>  <p>€{price} <button id={id} type='button' onClick={favoritsListHendler}>
+      
+      <Icons name="favorite"
+stroke= {favoritList.includes(id)? "red":"#101828"} 
+color = {favoritList.includes(id) ? "red":"none"}
           width="20"
-          height="20"/>
+          height="20"/></button>
           </p>
 </div>
 <div className={styles.locationBlock}>
-     <p><Icons name="star"
+     <p className={styles.raiting}><Icons  name="star"
           width="20"
           height="20"/>{rating}<span>({reviews.length} Reviews)</span></p> 
      <p><Icons name="location"
@@ -69,15 +73,18 @@ stroke="currentColor"
           width="20"
           height="20"
           />{details.beds} beds</li>
-      {details.airConditioner && (<li><Icons name="ac"
+      {details.airConditioner && (<li><Icons name="airConditioner"
      
           width="20"
           height="20"
           />AC</li>)}
      </ul>
-     <button className={styles.btnShowMore} type="button" id={`button${id}`} onClick={hendlerModalOpen}>Show more</button>
+     <button className={styles.btnShowMore} type="button" id={`button${id}`} onClick={togelModal}>Show more</button>
+  
 </div>
     </li>
+
+    
   );
 };
 

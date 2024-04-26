@@ -7,7 +7,14 @@
   height: 100vh;
   z-index: 110;
   background-color: rgba(17, 18, 19, 0.4);
+  overflow-y: none;
+}
+/* [hidden] {
+  overflow: hidden;
+} */
+.modalInfo {
   scroll-behavior: smooth;
+  overflow-y: auto;
 }
 .container {
   position: absolute;
@@ -18,8 +25,39 @@
   height: 720px;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 40px;
+  padding: 0 40px 40px 40px;
   border-radius: 20px;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+}
+/* .sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+} */
+.modalHeader {
+  padding-top: 40px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  margin-bottom: 24px;
+}
+
+.modalHeaderText {
+  margin-bottom: 8px;
+}
+.modalHeader button {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  margin-bottom: 24px;
+}
+.featureContainer {
+  width: 50%;
+}
+.bookingForm {
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
 }
 .locationBlock {
   display: flex;
@@ -32,8 +70,12 @@
   flex-direction: row;
   justify-content: space-between;
   list-style: none;
-
-  /* gap: 16px; */
+  margin-bottom: 24px;
+}
+.sectionTableCalendar {
+  margin-top: 44px;
+  display: flex;
+  gap: 24px;
 }
 .camperImgModal {
   width: 290px;
@@ -60,4 +102,11 @@
 .clientsBlockHeaders button:active,
 .clientsBlockHeaders button:focus {
   border-bottom: 5px solid rgba(228, 72, 72, 1);
+}
+table {
+  width: 100%;
+}
+
+tr td:nth-child(2) {
+  text-align: end;
 }

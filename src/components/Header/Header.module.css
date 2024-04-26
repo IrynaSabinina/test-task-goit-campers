@@ -1,0 +1,18 @@
+button {
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: white;
+  border-bottom: 1px solid rgba(247, 247, 247, 1);
+}
+link {
+  font-style: none;
+}

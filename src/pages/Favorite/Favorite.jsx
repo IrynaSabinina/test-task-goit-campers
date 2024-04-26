@@ -1,12 +1,16 @@
-import { CamperItem } from "./Camper";
+import { useEffect, useState } from "react";
+import {CampersList} from "../../components/Campers/CampersList"
+
+import { GoToCatalog } from "../../components/GoHome/GoToCatalog";
+import { CamperItem } from "../../components/Campers/Camper";
 import { campersSelector } from "../../redux/selectors";
 import { useSelector } from "react-redux";
-import styles from "./CampersList.module.css";
-import { useEffect, useState } from "react";
-import { ModalSuccess } from "../Modal/Modal";
+import { ModalSuccess } from "../../components/Modal/Modal";
+import { Header } from "../../components/Header/Header";
 
-export const CampersList = () => {
-  const currentUrl = window.location.href;
+export const FavoriteList = () =>{
+//  const favList = (JSON.parse(localStorage.getItem("favorites")));
+const currentUrl = window.location.href;
   console.log(currentUrl.toString().substr(currentUrl.length - 5));
   const BtnPagination = document.getElementById("paginationBtn");
 
@@ -79,12 +83,12 @@ export const CampersList = () => {
   localStorage.setItem("favoritesId", JSON.stringify(favoritesId));
   localStorage.setItem("favorites", JSON.stringify(favList));
 
-  return (
-    <div>
-      <div className={styles.containerForCatalog}>
-        <ul className={styles.campersList}>
-          {currentUrl.toString().substr(currentUrl.length - 5) === "talog" &&
-            visibleCampers.map(
+
+return(
+    <>
+    <Header/>
+    <ul>
+                    {favList.map(
               ({
                 _id,
                 name,
@@ -116,58 +120,16 @@ export const CampersList = () => {
                     reviews={reviews}
                     togelModal={togelModal}
                     favoritsListHendler={favoritsList}
+                    
                   />
-                );
+                )
               }
-            )}
-          {currentUrl.toString().substr(currentUrl.length - 5) === "rites" &&
-            favList.map(
-              ({
-                _id,
-                name,
-                gallery,
-                adults,
-                price,
-                engine,
-                transmission,
-                rating,
-                location,
-                description,
-                details,
-                reviews,
-              }) => {
-                return (
-                  <CamperItem
-                    key={_id}
-                    id={_id}
-                    name={name}
-                    gallery={gallery}
-                    price={price}
-                    rating={rating}
-                    location={location}
-                    adults={adults}
-                    engine={engine}
-                    transmission={transmission}
-                    description={description}
-                    details={details}
-                    reviews={reviews}
-                    togelModal={togelModal}
-                    favoritsListHendler={favoritsList}
-                  />
-                );
-              }
-            )}
-        </ul>
-        <button
-          className={styles.BtnPagination}
-          type="button"
-          onClick={pagination}
-          id="paginationBtn"
-        >
-          Load more
-        </button>
-      </div>
-      {id && <ModalSuccess id={id} closeModal={closeModal} />}
-    </div>
-  );
-};
+            )} 
+    </ul> 
+    {id && <ModalSuccess id={id} closeModal={closeModal} />}
+    
+    
+    
+    </>
+)
+}

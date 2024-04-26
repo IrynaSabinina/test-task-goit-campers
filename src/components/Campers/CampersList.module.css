@@ -9,6 +9,15 @@
 .campersItem:not(:last-child) {
   margin-bottom: 32px;
 }
+.price {
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  color: rgba(16, 24, 40, 1);
+  margin-top: 16px;
+}
 .camperImg {
   width: 290px;
   height: 310px;
@@ -63,6 +72,9 @@
   justify-content: space-between;
   min-height: 310px;
 }
+.raiting {
+  text-decoration: underline;
+}
 .titleBlock {
   font-family: "Inter";
   font-weight: 600;
@@ -89,4 +101,24 @@
 }
 .locationBlock p svg {
   margin-right: 4px;
+}
+.BtnPagination {
+  padding: 16px 40px 16px 40px;
+  background-color: white;
+  border-radius: 200px;
+  border: 1px solid rgba(71, 84, 103, 0.2);
+
+  max-width: 166px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
+  margin-top: 50px;
+}
+.containerForCatalog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
