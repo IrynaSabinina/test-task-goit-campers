@@ -8,7 +8,7 @@ import { Header } from "../../components/Header/Header";
 
 export const FavoriteList = () => {
   const currentUrl = window.location.href;
-  console.log(currentUrl.toString().substr(currentUrl.length - 5));
+ 
   const BtnPagination = document.getElementById("paginationBtn");
 
   const [id, setId] = useState("");

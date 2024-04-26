@@ -7,7 +7,7 @@ import { ModalSuccess } from "../Modal/Modal";
 
 export const CampersList = () => {
   const currentUrl = window.location.href;
-  console.log(currentUrl.toString().substr(currentUrl.length - 5));
+
   const BtnPagination = document.getElementById("paginationBtn");
 
   const [id, setId] = useState("");
@@ -55,7 +55,7 @@ export const CampersList = () => {
     setId("");
   };
 
- const favoritsList = (event) => {
+  const favoritsList = (event) => {
     const id = event.currentTarget.id;
     event.preventDefault();
 
