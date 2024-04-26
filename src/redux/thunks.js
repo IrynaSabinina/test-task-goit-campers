@@ -5,5 +5,3 @@ export const getCampersThunk = createAsyncThunk("advert/catalog", async () => {
 
   return data;
 });
-
-// getCampersThunk();

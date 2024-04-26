@@ -20,8 +20,7 @@ export const App = () => {
     dispatch(getCampersThunk());
   }, [dispatch]);
 
-  // const campers = getCampersThunk();
-  // console.log(campers);
+ 
   return (
     <>
       <Routes>

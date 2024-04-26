@@ -121,6 +121,7 @@ export const FavoriteList = () => {
           }
         )}
       </ul>
+      
      ) :<p>this list still empry! Try to add 1 st Camper here!</p>  }
       {id && <ModalSuccess id={id} closeModal={closeModal} />}
       
