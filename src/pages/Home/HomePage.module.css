@@ -4,3 +4,9 @@
   justify-content: center;
   align-items: center;
 }
+.homeContainer h1 {
+  margin-top: 40 px;
+}
+.homeContainer article {
+  width: 70%;
+}
