@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
-import {CampersList} from "../../components/Campers/CampersList"
 
-import { GoToCatalog } from "../../components/GoHome/GoToCatalog";
 import { CamperItem } from "../../components/Campers/Camper";
 import { campersSelector } from "../../redux/selectors";
 import { useSelector } from "react-redux";
 import { ModalSuccess } from "../../components/Modal/Modal";
 import { Header } from "../../components/Header/Header";
 
-export const FavoriteList = () =>{
-//  const favList = (JSON.parse(localStorage.getItem("favorites")));
-const currentUrl = window.location.href;
+export const FavoriteList = () => {
+  const currentUrl = window.location.href;
   console.log(currentUrl.toString().substr(currentUrl.length - 5));
   const BtnPagination = document.getElementById("paginationBtn");
 
@@ -59,7 +56,7 @@ const currentUrl = window.location.href;
     setId("");
   };
 
- const favoritsList = (event) => {
+  const favoritsList = (event) => {
     const id = event.currentTarget.id;
     event.preventDefault();
 
@@ -83,53 +80,50 @@ const currentUrl = window.location.href;
   localStorage.setItem("favoritesId", JSON.stringify(favoritesId));
   localStorage.setItem("favorites", JSON.stringify(favList));
 
-
-return(
+  return (
     <>
-    <Header/>
-    <ul>
-                    {favList.map(
-              ({
-                _id,
-                name,
-                gallery,
-                adults,
-                price,
-                engine,
-                transmission,
-                rating,
-                location,
-                description,
-                details,
-                reviews,
-              }) => {
-                return (
-                  <CamperItem
-                    key={_id}
-                    id={_id}
-                    name={name}
-                    gallery={gallery}
-                    price={price}
-                    rating={rating}
-                    location={location}
-                    adults={adults}
-                    engine={engine}
-                    transmission={transmission}
-                    description={description}
-                    details={details}
-                    reviews={reviews}
-                    togelModal={togelModal}
-                    favoritsListHendler={favoritsList}
-                    
-                  />
-                )
-              }
-            )} 
-    </ul> 
-    {id && <ModalSuccess id={id} closeModal={closeModal} />}
-    
-    
-    
+      <Header />
+      {favoritesId.length ? (<ul>
+        {favList.map(
+          ({
+            _id,
+            name,
+            gallery,
+            adults,
+            price,
+            engine,
+            transmission,
+            rating,
+            location,
+            description,
+            details,
+            reviews,
+          }) => {
+            return (
+              <CamperItem
+                key={_id}
+                id={_id}
+                name={name}
+                gallery={gallery}
+                price={price}
+                rating={rating}
+                location={location}
+                adults={adults}
+                engine={engine}
+                transmission={transmission}
+                description={description}
+                details={details}
+                reviews={reviews}
+                togelModal={togelModal}
+                favoritsListHendler={favoritsList}
+              />
+            );
+          }
+        )}
+      </ul>
+     ) :<p>this list still empry! Try to add 1 st Camper here!</p>  }
+      {id && <ModalSuccess id={id} closeModal={closeModal} />}
+      
     </>
-)
-}
+  );
+};

@@ -36,7 +36,7 @@ export const CampersList = () => {
     if (page === 4) {
       BtnPagination.disabled = true;
     }
-  }, [page, id, currentUrl]);
+  }, [page, id, currentUrl, BtnPagination, favoritesId]);
 
   const pagination = (e) => {
     e.preventDefault();

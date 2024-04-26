@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+
 import styles from './CampersList.module.css';
 import { Icons } from '../../images/icons.js';
 import { useEffect, useState } from 'react';
@@ -7,16 +7,9 @@ import { useEffect, useState } from 'react';
 
 export const CamperItem = ({ favoritsListHendler, togelModal,id, name, price, rating, location, adults, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews }) => {
   const favoritList = JSON.parse(localStorage.getItem("favoritesId"))
-  console.log(favoritList)
-  console.log(id)
 
- const [inFavoriteList, setInFavoriteList] = useState(favoritList.includes(id) )
  useEffect (() => {
-
-  favoritList.includes(id) ? setInFavoriteList(true):setInFavoriteList(false)
-  
-
-  }, []);
+  }, [favoritList]);
  
   
   return (
@@ -87,10 +80,3 @@ color = {favoritList.includes(id) ? "red":"none"}
     
   );
 };
-
-// ContactItem.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   phone: PropTypes.string.isRequired,
-//   id: PropTypes.string.isRequired,
-//   contactDelete: PropTypes.func.isRequired,
-// };
