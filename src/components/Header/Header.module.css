@@ -15,8 +15,7 @@
 .headerButton:focus,
 .headerButton:active {
   cursor: pointer;
-  background-color: rgba(228, 72, 72, 1);
-  color: white;
+  border: 1px solid rgba(228, 72, 72, 1);
 }
 p {
   margin: 0;

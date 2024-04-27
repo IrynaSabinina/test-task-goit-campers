@@ -3,12 +3,8 @@ import { CamperItem } from "./Camper";
 import styles from "./CampersList.module.css";
 
 import { ModalSuccess } from "../Modal/Modal";
-import { useEffect, useState } from "react";
 
 export const CampersList = ({visibleCampers,id, pagination,favoritsList, togelModal, closeModal}) => {
-  const favoritList = JSON.parse(localStorage.getItem("favoritesId"))
-
-
 
   return (
     <div>

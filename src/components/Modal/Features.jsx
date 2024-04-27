@@ -6,22 +6,22 @@ export const Features =({camper}) =>{
     
  
     return ( 
-    <div key ={camper._id} className={style.featureContainer}>
- <ul className={styles.detailsList}>
-             <li key="100" >
+    <div key ={nanoid()} className={style.featureContainer}>
+ <ul key ={nanoid()} className={styles.detailsList}>
+             <li key ={nanoid()} >
                <Icons name="adults"
                  color="black"
                  width="20"
                  height="20"/>
                <span>{camper.adults} adults</span>
              </li >
-             <li key={"200"} ><Icons name="transmission"
+             <li key={nanoid()} ><Icons name="transmission"
                  color="black"
                  width="20"
                  height="20"
                  />
                {camper.transmission}</li>
-             <li key={"300"} id={nanoid()}><Icons name="engine"
+             <li key={nanoid()} id={nanoid()}><Icons name="engine"
                  color="black"
                  width="20"
                  height="20"
@@ -35,7 +35,7 @@ export const Features =({camper}) =>{
                    shownName = item[0]
                    }
                    return (
-                     item[1] && item[0]!=="bathroom" ?  <li key={index} ><Icons name={item[0]}
+                     item[1] && item[0]!=="bathroom" ?  <li key ={nanoid()} id={index}><Icons name={item[0]}
                  color="black"
                  width="20"
                  height="20"

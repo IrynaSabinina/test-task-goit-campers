@@ -4,8 +4,8 @@ export const Header = () => {
   return (
     <header>
       <ul>
-        <li  >
-          <Link  to="/test-task-goit-campers/">
+        <li>
+          <Link to="/test-task-goit-campers/">
             <button className={styles.headerButton} type="button">
               Home
             </button>
