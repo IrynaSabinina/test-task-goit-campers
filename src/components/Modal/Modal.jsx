@@ -52,7 +52,7 @@ export const ModalSuccess = ({ id, closeModal }) => {
 
           <div className={styles.clientsBlock}>
             <div className={styles.clientsBlockHeaders}>
-              <button id="features" active>
+              <button id="features">
                 Features
               </button>
               <button id="reviews">Reviews</button>

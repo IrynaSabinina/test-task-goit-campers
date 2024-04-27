@@ -128,3 +128,6 @@
 .campersList {
   margin-bottom: 50px;
 }
+.active {
+  fill: green;
+}

@@ -5,12 +5,9 @@ import { useEffect, useState } from 'react';
 
 
 
-export const CamperItem = ({ favoritsListHendler, togelModal,id, name, price, rating, location, adults, engine, transmission, form, length, width, height, tank, consumption, description, details, gallery, reviews }) => {
+export const CamperItem = ({ favoritsListHendler, togelModal,id, name, price, rating, location, adults, engine, transmission, description, details, gallery, reviews }) => {
   const favoritList = JSON.parse(localStorage.getItem("favoritesId"))
 
- useEffect (() => {
-  }, [favoritList]);
- 
   
   return (
     <li className={styles.campersItem} id ={id} >
@@ -19,10 +16,10 @@ export const CamperItem = ({ favoritsListHendler, togelModal,id, name, price, ra
 <div className={styles.titleBlock}>
 
      <h2>{name}</h2>  <p>€{price} <button id={id} type='button' onClick={favoritsListHendler}>
-      
-      <Icons name="favorite"
-stroke= {favoritList.includes(id)? "red":"#101828"} 
-color = {favoritList.includes(id) ? "red":"none"}
+      <Icons data-id={id} id={`svg${id}`}
+      name="favorite"
+      stroke={favoritList.includes(id)? "none":"#101828"}
+      color={favoritList.includes(id)? "red":"none"}
           width="20"
           height="20"/></button>
           </p>

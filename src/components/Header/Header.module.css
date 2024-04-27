@@ -11,7 +11,10 @@
   letter-spacing: -0.005em;
   text-align: left;
 }
-.headerButton:hover {
+.headerButton:hover,
+.headerButton:focus,
+.headerButton:active {
+  cursor: pointer;
   background-color: rgba(228, 72, 72, 1);
   color: white;
 }

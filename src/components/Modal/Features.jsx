@@ -6,28 +6,28 @@ export const Features =({camper}) =>{
     
  
     return ( 
-    <div className={style.featureContainer}>
+    <div key ={camper._id} className={style.featureContainer}>
  <ul className={styles.detailsList}>
-             <li>
+             <li key="100" >
                <Icons name="adults"
                  color="black"
                  width="20"
                  height="20"/>
                <span>{camper.adults} adults</span>
-             </li>
-             <li><Icons name="transmission"
+             </li >
+             <li key={"200"} ><Icons name="transmission"
                  color="black"
                  width="20"
                  height="20"
                  />
                {camper.transmission}</li>
-             <li><Icons name="engine"
+             <li key={"300"} id={nanoid()}><Icons name="engine"
                  color="black"
                  width="20"
                  height="20"
                  />{camper.engine}</li>
        
-                 {Object.entries(camper.details).map((item)=> {
+                 {Object.entries(camper.details).map((item, index)=> {
                    let shownName;
                    if (item[0] === "airConditioner") {
                     shownName = "AC"
@@ -35,7 +35,7 @@ export const Features =({camper}) =>{
                    shownName = item[0]
                    }
                    return (
-                     item[1] && item[0]!=="bathroom" ?  <li key={nanoid()} id={nanoid()}><Icons name={item[0]}
+                     item[1] && item[0]!=="bathroom" ?  <li key={index} ><Icons name={item[0]}
                  color="black"
                  width="20"
                  height="20"

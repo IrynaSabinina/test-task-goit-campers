@@ -23,7 +23,7 @@ export const FilterBar =()=>{
         type="text"
         name="Location"
         autoComplete="off"
-        autoFocus
+        // autoFocus
         placeholder="Kyiv, Ukraine"
         value={search}
         onChange={handleSearchChange}

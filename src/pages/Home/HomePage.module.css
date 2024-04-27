@@ -22,3 +22,6 @@
   border-radius: 20px;
   width: 70%;
 }
+.active {
+  fill: green;
+}
