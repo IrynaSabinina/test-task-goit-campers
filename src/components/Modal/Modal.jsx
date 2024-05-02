@@ -5,11 +5,19 @@ import styles from "./Modal.module.css";
 import { Icons } from "../../images/icons";
 import { BookingBlock } from "./BookingBlock";
 import { Features } from "./Features";
+import { Reviews } from "./Reviews";
+import { useState } from "react";
 
 export const ModalSuccess = ({ id, closeModal }) => {
   const campers = useSelector(campersSelector);
 
   const camper = campers.find((item) => item._id === id.toString());
+  const [listValue, setListValue] = useState("features")
+  const changeMarkUp =(e)=>{
+e.preventDefault()
+setListValue(e.target.id)
+
+  }
 
   return (camper ? (
     <div id="modalBackdrop" className={styles.backdrop}>
@@ -52,13 +60,15 @@ export const ModalSuccess = ({ id, closeModal }) => {
 
           <div className={styles.clientsBlock}>
             <div className={styles.clientsBlockHeaders}>
-              <button id="features">
+              <button id="features" onClick={changeMarkUp}>
                 Features
               </button>
-              <button id="reviews">Reviews</button>
+              <button id="reviews" onClick={changeMarkUp}>Reviews</button>
             </div>
             <div className={styles.sectionTableCalendar}>
-              <Features camper={camper} />
+              {listValue === "features"?  <Features camper={camper} />:<Reviews camper={camper}/>}
+              {/* <Features camper={camper} />
+              <Reviews camper={camper}/> */}
               <BookingBlock />
             </div>
           </div>

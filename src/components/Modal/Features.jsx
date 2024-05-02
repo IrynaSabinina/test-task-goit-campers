@@ -7,7 +7,7 @@ export const Features =({camper}) =>{
  
     return ( 
     <div key ={nanoid()} className={style.featureContainer}>
- <ul key ={nanoid()} className={styles.detailsList}>
+ <ul key ={nanoid()}className={styles.detailsList}>
              <li key ={nanoid()} >
                <Icons name="adults"
                  color="black"
