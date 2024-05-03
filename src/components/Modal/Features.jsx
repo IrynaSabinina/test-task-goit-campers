@@ -6,22 +6,22 @@ export const Features =({camper}) =>{
     
  
     return ( 
-    <div key ={nanoid()} className={style.featureContainer}>
- <ul key ={nanoid()}className={styles.detailsList}>
-             <li key ={nanoid()} >
-               <Icons name="adults"
+    <div  className={style.featureContainer}>
+ <ul className={styles.detailsList}>
+             <li key ={nanoid()} id={nanoid()} >
+               <Icons id={nanoid()} name="adults"
                  color="black"
                  width="20"
                  height="20"/>
                <span>{camper.adults} adults</span>
              </li >
-             <li key={nanoid()} ><Icons name="transmission"
+             <li key={nanoid()} id={nanoid()} ><Icons id={nanoid()} name="transmission"
                  color="black"
                  width="20"
                  height="20"
                  />
                {camper.transmission}</li>
-             <li key={nanoid()} id={nanoid()}><Icons name="engine"
+             <li key={nanoid()} id={nanoid()}><Icons id={nanoid()} name="engine"
                  color="black"
                  width="20"
                  height="20"

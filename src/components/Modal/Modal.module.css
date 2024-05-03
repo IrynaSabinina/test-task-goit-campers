@@ -110,3 +110,6 @@ table {
 tr td:nth-child(2) {
   text-align: end;
 }
+.startContainer {
+  display: flex;
+}

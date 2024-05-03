@@ -1,47 +1,28 @@
 import { Icons } from "images/icons"
-import { nanoid } from "nanoid"
+import styles from "./Modal.module.css"
+
 
 export const Reviews =({camper}) =>{
-    console.log(camper)
-    console.log(camper.reviews.length)
-  const raitingIcons =(camp)=>{
-    let rating = camp?.reviewer_rating
-if (!rating){
-    console.log("nooo")
-    return
-} else if (rating >0) {
-    console.log("nooo2")
-    for (let i =0; i< camper?.reviewer_rating; i++ ) {
-    return (
-       < li>
-    <Icons name="star" width="20" height="20" />
-       </li>
-    )
-}
-    }
 
-}
-// if(array.length > 0){
-//   return array.map(function(each){
-//     return(<h1>hello {each.name}</h1>)
-//   })
-// } else {
-//   return []
-// }
-return (
-    //    { camper.reviews.length &&    
-        <ul>
+return (    
+        <ul className={styles.detailsList}>
 {camper.reviews.map((item, index)=> {
-    console.log(item)
+    let stars = [];
+   for (let i= 0; i<item.reviewer_rating; i++){
+    stars.push(i)
+   }
 return (<li id = {index}>
 <p>{item.reviewer_name}</p>
-<ul>
- {}
-    {raitingIcons(item)}
-    {/* raitingIcons(item) */}
+<ul className={styles.startContainer}>
+
+{stars.map((item, index)=> {
+    return <li id={`${item}+${index}`}>
+         <Icons name="star" width="20" height="20" />
+    </li>
+})}
 </ul>
 <p>
-   {item.item}
+   {item.comment}
 </p>
 </li>) 
 })}

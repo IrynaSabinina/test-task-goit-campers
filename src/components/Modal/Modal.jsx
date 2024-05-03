@@ -16,7 +16,6 @@ export const ModalSuccess = ({ id, closeModal }) => {
   const changeMarkUp =(e)=>{
 e.preventDefault()
 setListValue(e.target.id)
-
   }
 
   return (camper ? (
@@ -67,8 +66,6 @@ setListValue(e.target.id)
             </div>
             <div className={styles.sectionTableCalendar}>
               {listValue === "features"?  <Features camper={camper} />:<Reviews camper={camper}/>}
-              {/* <Features camper={camper} />
-              <Reviews camper={camper}/> */}
               <BookingBlock />
             </div>
           </div>
