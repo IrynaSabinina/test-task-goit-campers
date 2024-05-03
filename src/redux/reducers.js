@@ -1,4 +1,4 @@
-import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import { isAnyOf, createSlice } from "@reduxjs/toolkit";
 
 import { campersInitialState } from "./initialState";
 
@@ -6,8 +6,8 @@ import { getCampersThunk } from "./thunks";
 
 const getActions = (type) => isAnyOf(getCampersThunk[type]);
 
-export const campersSlice = createSlice({
-  name: "campers",
+export const campers = createSlice({
+  name: "advert/catalog",
   initialState: campersInitialState,
   reducers: {
     filter: (state, action) => {
@@ -32,7 +32,7 @@ export const campersSlice = createSlice({
       }),
 });
 
-export const campersReducer = campersSlice.reducer;
-export const { filter } = campersSlice.actions;
+export const campersReducer = campers.reducer;
+export const { filter } = campers.actions;
 
-// console.log(campersSlice.actions);
+// console.log(campers.actions);
