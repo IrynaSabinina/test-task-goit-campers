@@ -9,9 +9,7 @@
   background-color: rgba(17, 18, 19, 0.4);
   overflow-y: none;
 }
-/* [hidden] {
-  overflow: hidden;
-} */
+
 .modalInfo {
   scroll-behavior: smooth;
   overflow-y: auto;
@@ -30,11 +28,7 @@
   scroll-behavior: smooth;
   overflow-y: auto;
 }
-/* .sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-} */
+
 .modalHeader {
   padding-top: 40px;
   background-color: white;
@@ -54,6 +48,7 @@
 }
 .featureContainer {
   width: 50%;
+  margin-right: 24px;
 }
 .bookingForm {
   border: 1px solid rgba(16, 24, 40, 0.2);
@@ -112,4 +107,41 @@ tr td:nth-child(2) {
 }
 .startContainer {
   display: flex;
+}
+.raitingName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+}
+.reviewHeader {
+  display: flex;
+  margin-bottom: 24px;
+}
+.nickForm {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(242, 244, 247, 1);
+  color: rgba(228, 72, 72, 1);
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: left;
+  margin-right: 16px;
+}
+.comments {
+  margin-bottom: 24px;
+}
+.detailsListReviews {
+  width: 50%;
+  margin-right: 24px;
 }

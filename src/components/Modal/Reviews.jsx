@@ -5,13 +5,16 @@ import styles from "./Modal.module.css"
 export const Reviews =({camper}) =>{
 
 return (    
-        <ul className={styles.detailsList}>
+        <ul className={styles.detailsListReviews}>
 {camper.reviews.map((item, index)=> {
     let stars = [];
    for (let i= 0; i<item.reviewer_rating; i++){
     stars.push(i)
    }
-return (<li id = {index}>
+return (<li id = {index} className={styles.comments}>
+    <div className={styles.reviewHeader}>
+    <div className={styles.nickForm}>{item.reviewer_name[0]}</div>
+    <div className={styles.raitingName}>
 <p>{item.reviewer_name}</p>
 <ul className={styles.startContainer}>
 
@@ -21,6 +24,8 @@ return (<li id = {index}>
     </li>
 })}
 </ul>
+    </div>
+    </div>
 <p>
    {item.comment}
 </p>
