@@ -3,13 +3,11 @@ import { CamperItem } from "./Camper";
 import styles from "./CampersList.module.css";
 
 import { ModalSuccess } from "../Modal/Modal";
-import { useEffect } from "react";
+
 
 export const CampersList = ({visibleCampers,id, showAll, pagination,favoritsList, togelModal, closeModal}) => {
   const filtered=JSON.parse(localStorage.getItem("filtered"))
-//   useEffect(()=>{
 
-//  },[filtered])
   return (
     <div>
       <div className={styles.containerForCatalog}>
@@ -62,14 +60,7 @@ export const CampersList = ({visibleCampers,id, showAll, pagination,favoritsList
         >
           Load more
         </button> 
-        {filtered[0] && <button
-          className={styles.BtnPagination}
-          type="button"
-          onClick={showAll}
-          id="paginationBtn"
-        >
-          Show All
-        </button>}
+       
         
 
       </div>

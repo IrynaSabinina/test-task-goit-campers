@@ -5,7 +5,7 @@ import { Header } from "../../components/Header/Header"
 import styles from "../Home/HomePage.module.css"
 import style from "./Catalog.module.css"
 import { useEffect, useState } from "react";
-import { campersSelector, filterSelector } from "../../redux/selectors";
+import { campersSelector } from "../../redux/selectors";
 
 
 export const Catalog =()=>{
@@ -18,7 +18,7 @@ export const Catalog =()=>{
   const [favoritesId, setFavoritesId] = useState(
     JSON.parse(localStorage.getItem("favoritesId"))
   );
-  const BtnFiltr = document.getElementById("searchLocation")
+  
   const [favList, setFavList] = useState(
     JSON.parse(localStorage.getItem("favorites"))
   );
@@ -29,7 +29,6 @@ export const Catalog =()=>{
     if (page === 4) {
       BtnPagination.disabled = true;
     }
-    
   }, [page, id, filtered[0]]);
 
   document.addEventListener("keydown", (event) => {

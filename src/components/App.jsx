@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { getCampersThunk } from "../redux/thunks";
+// import  {createBrowserHistory } from 'history';
 
 import { FavoriteList } from "../pages/Favorite/Favorite";
 import { NotFound } from "../pages/NoteFound/NotFound";
@@ -17,6 +18,7 @@ export const App = () => {
 
   const dispatch = useDispatch();
 
+
   useEffect(() => {
     dispatch(getCampersThunk());
   }, [dispatch]);
@@ -25,10 +27,10 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/test-task-goit-campers" element={<HomePage />} />
-        <Route path="/test-task-goit-campers/catalog" element={<Catalog />} />
-        <Route path="/test-task-goit-campers/favorites" element={<FavoriteList />} />
-       <Route path="/test-task-goit-campers/*" element={<Navigate to="/test-task-goit-campers" replace={true} />}/>
+        <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers" element={<HomePage />} />
+        <Route basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/catalog" element={<Catalog />} />
+        <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/favorites" element={<FavoriteList />} />
+       <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/*" element={<Navigate to="/test-task-goit-campers" replace={true} />}/>
       </Routes>
     </>
   );

@@ -1,11 +1,9 @@
 import { toast } from "react-toastify";
 import styles from "./FilterBar.module.css";
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { campersSelector } from "../../redux/selectors";
 
 export const FilterBar = ({ onSubmit }) => {
-  const campers = useSelector(campersSelector);
+ 
 
   const [searchLocation, setSearch] = useState("");
   const [buttonText, setButtonText] = useState("Search");
