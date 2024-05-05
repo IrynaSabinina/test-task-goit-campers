@@ -27,7 +27,7 @@ export const App = () => {
         <Route path="/test-task-goit-campers" element={<HomePage />} />
         <Route path="/test-task-goit-campers/catalog" element={<Catalog />} />
         <Route path="/test-task-goit-campers/favorites" element={<FavoriteList />} />
-       <Route path="/test-task-goit-camper/*" element={<NotFound />} />
+       <Route path="/test-task-goit-campers/*" element={<NotFound />} />
       </Routes>
     </>
   );
