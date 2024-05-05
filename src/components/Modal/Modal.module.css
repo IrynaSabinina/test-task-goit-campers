@@ -53,8 +53,43 @@
   margin-right: 24px;
 }
 .bookingForm {
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
+  padding: 24px;
+}
+
+.bookingForm button {
+  padding: 16px 40px 16px 40px;
+  background-color: rgba(228, 72, 72, 1);
+  border-radius: 200px;
+  border: none;
+  color: white;
+  max-width: 166px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 24px;
+}
+.bookingForm p {
+  margin-bottom: 24px;
+}
+
+.bookingForm input {
+  padding: 18px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 14px;
 }
 .locationBlock {
   display: flex;
@@ -155,4 +190,23 @@ tr td:nth-child(2) {
   -webkit-overflow-scrolling: none;
   overflow: hidden;
   overscroll-behavior: none;
+}
+
+.vehicleDetails {
+  margin-top: 44px;
+}
+.vehicleDetails h4 {
+  margin-bottom: 48px;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: left;
+}
+tr {
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 14px;
 }

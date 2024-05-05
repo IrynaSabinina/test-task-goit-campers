@@ -46,6 +46,9 @@ export const Features =({camper}) =>{
                    )
                  })}
             </ul>
+            <div className={style.vehicleDetails}>
+
+
             <h4>Vehicle details</h4>
 <table>
     <tbody className={style.modalTable}>
@@ -75,6 +78,7 @@ export const Features =({camper}) =>{
   </tr>
     </tbody>
   </table>
+            </div>
     </div>
     )
 }
