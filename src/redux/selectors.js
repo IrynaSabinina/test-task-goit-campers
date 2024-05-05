@@ -2,19 +2,20 @@ import { createSelector } from "@reduxjs/toolkit";
 
 export const campersSelector = (state) => state.campers.campers.items;
 
-export const filterSelector = (state) => state.filter;
+export const filterSelector = (state) => state.campers.filter;
 
-export const isLoadingSelector = (state) => state.campers.isLoading;
+export const isLoadingSelector = (state) => state.campers.campers.isLoading;
 
-export const errorSelector = (state) => state.campers.error;
+export const errorSelector = (state) => state.campers.campers.error;
 
 export const selectCategory = createSelector(
   [campersSelector, filterSelector],
   (campers, filter) => {
+    console.log(filter);
     const campersinTheList = campers.filter((camper) =>
       camper.details.toLowerCase().includes(filter.toLowerCase())
     );
-
+    console.log(campersinTheList);
     return campersinTheList;
   }
 );

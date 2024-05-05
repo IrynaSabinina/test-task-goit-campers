@@ -1,4 +1,47 @@
 .filterContainer {
+  min-width: 360px;
   display: flex;
   flex-direction: column;
+  margin-right: 64px;
+}
+.btnSearch {
+  padding: 16px 40px 16px 40px;
+  background-color: white;
+  border-radius: 200px;
+  border: 1px solid rgba(71, 84, 103, 0.2);
+  margin-top: 64px;
+  max-width: 166px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.005em;
+  text-align: left;
+}
+
+.btnSearch:hover {
+  background-color: rgba(228, 72, 72, 1);
+  color: white;
+  cursor: pointer;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: rgba(16, 24, 40, 0.6);
+}
+.label input {
+  padding: 18px;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 10px;
+  border: none;
 }

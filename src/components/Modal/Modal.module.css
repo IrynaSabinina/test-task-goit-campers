@@ -9,7 +9,9 @@
   background-color: rgba(17, 18, 19, 0.4);
   overflow-y: none;
 }
-
+.clientsBlockHeaders button {
+  cursor: pointer;
+}
 .modalInfo {
   scroll-behavior: smooth;
   overflow-y: auto;
@@ -144,4 +146,13 @@ tr td:nth-child(2) {
 .detailsListReviews {
   width: 50%;
   margin-right: 24px;
+}
+
+.body-no-scroll {
+  height: 100vh;
+  width: 100vw;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
 }

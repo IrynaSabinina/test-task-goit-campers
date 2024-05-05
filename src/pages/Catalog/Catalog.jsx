@@ -3,8 +3,9 @@ import { CampersList } from "../../components/Campers/CampersList"
 import { FilterBar } from "../../components/Filters/FilterBar"
 import { Header } from "../../components/Header/Header"
 import styles from "../Home/HomePage.module.css"
+import style from "./Catalog.module.css"
 import { useEffect, useState } from "react";
-import { campersSelector } from "../../redux/selectors";
+import { campersSelector, filterSelector } from "../../redux/selectors";
 
 
 export const Catalog =()=>{
@@ -12,34 +13,37 @@ export const Catalog =()=>{
 
   const BtnPagination = document.getElementById("paginationBtn");
   const campers = useSelector(campersSelector);
-  console.log(campers)
 
   const [id, setId] = useState("");
   const [favoritesId, setFavoritesId] = useState(
     JSON.parse(localStorage.getItem("favoritesId"))
   );
+  const BtnFiltr = document.getElementById("searchLocation")
   const [favList, setFavList] = useState(
     JSON.parse(localStorage.getItem("favorites"))
   );
   const [page, setPage] = useState(1);
+  const [filtered, setFiltered]= useState(JSON.parse(localStorage.getItem("filtered")))
+  
+  useEffect(() => {
+    if (page === 4) {
+      BtnPagination.disabled = true;
+    }
+    
+  }, [page, id, filtered[0]]);
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       setId("");
     }
   });
+  
   document.addEventListener("click", (eve) => {
     if (eve.target.id === "modalBackdrop") {
       setId("");
     }
   });
-
-  let visibleCampers = campers?.slice(0, page * 4);
- 
-  useEffect(() => {
-    if (page === 4) {
-      BtnPagination.disabled = true;
-    }
-  }, [page, id]);
+  
   
   const pagination = (e) => {
     e.preventDefault();
@@ -49,6 +53,7 @@ export const Catalog =()=>{
       return (visibleCampers = campers?.slice(0, page * 4));
     }
   };
+
   const togelModal = (event) => {
     event.preventDefault();
     setId(event?.target.id.slice(6));
@@ -85,20 +90,27 @@ export const Catalog =()=>{
   localStorage.setItem("favoritesId", JSON.stringify(favoritesId));
   localStorage.setItem("favorites", JSON.stringify(favList));
   
-  const hendlerFilter=(campers, location, detaile, form)=>{
-    
-    
-  }
-    
-   
-    return (
-        <>
+  let visibleCampers = filtered[0] ? filtered.slice(0, page * 4): campers?.slice(0, page * 4);
+ const onSubmit =(searchLocation)=>{
+  const filteredList= []
+  campers.filter((e) => {
+    if((e.location).toLowerCase()=== searchLocation){
+      filteredList.push(e)
+    }
+  });
+     setFiltered(filteredList)
+      localStorage.setItem("filtered", JSON.stringify(filteredList));
+}
+ 
+  return (<>
         <div className={styles.homeContainer}>
 
         <Header/>
         </div>
-        <CampersList visibleCampers={visibleCampers} id={id} pagination={pagination} togelModal={togelModal} closeModal={closeModal} favoritsList={favoritsList}/>
-        <FilterBar onSubmit={hendlerFilter}/>
-        </>
+    <div className={style.catalogContainer}>
+        <FilterBar onSubmit={onSubmit} />
+           <CampersList visibleCampers={visibleCampers} id={id} pagination={pagination} togelModal={togelModal} closeModal={closeModal} favoritsList={favoritsList}/>
+        </div>
+  </>
     )
 }

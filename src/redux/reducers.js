@@ -7,7 +7,7 @@ import { getCampersThunk } from "./thunks";
 const getActions = (type) => isAnyOf(getCampersThunk[type]);
 
 export const campers = createSlice({
-  name: "advert/catalog",
+  name: "campers",
   initialState: campersInitialState,
   reducers: {
     filter: (state, action) => {

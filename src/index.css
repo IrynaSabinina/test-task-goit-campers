@@ -10,6 +10,7 @@ body {
 
   font-family: "Roboto", sans-serif;
   color: rgba(16, 24, 40, 1);
+  padding: 0 64px;
 }
 
 .hidden {

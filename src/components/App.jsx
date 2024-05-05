@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { getCampersThunk } from "../redux/thunks";
 
@@ -11,6 +11,7 @@ import { Catalog } from "../pages/Catalog/Catalog";
 
 export const App = () => {
   localStorage.setItem("favorites", JSON.stringify([]));
+  localStorage.setItem("filtered", JSON.stringify([]));
 
   localStorage.setItem("favoritesId", JSON.stringify([]));
 
@@ -27,7 +28,7 @@ export const App = () => {
         <Route path="/test-task-goit-campers" element={<HomePage />} />
         <Route path="/test-task-goit-campers/catalog" element={<Catalog />} />
         <Route path="/test-task-goit-campers/favorites" element={<FavoriteList />} />
-       <Route path="/test-task-goit-campers/*" element={<NotFound />} />
+       <Route path="/test-task-goit-campers/*" element={<Navigate to="/test-task-goit-campers" replace={true} />}/>
       </Routes>
     </>
   );
