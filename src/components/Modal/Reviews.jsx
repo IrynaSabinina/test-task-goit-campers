@@ -11,7 +11,7 @@ return (
    for (let i= 0; i<item.reviewer_rating; i++){
     stars.push(i)
    }
-return (<li id = {index} className={styles.comments}>
+return (<li id = {`reviewer_rating+${item}+${index}`} className={styles.comments}>
     <div className={styles.reviewHeader}>
     <div className={styles.nickForm}>{item.reviewer_name[0]}</div>
     <div className={styles.raitingName}>
@@ -19,7 +19,7 @@ return (<li id = {index} className={styles.comments}>
 <ul className={styles.startContainer}>
 
 {stars.map((item, index)=> {
-    return <li id={`${item}+${index}`}>
+    return <li id={`stars+${item}+${index}`}>
          <Icons name="star" width="20" height="20" />
     </li>
 })}
