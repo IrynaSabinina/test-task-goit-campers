@@ -30,7 +30,7 @@ export const App = () => {
         <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers" element={<HomePage />} />
         <Route basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/catalog" element={<Catalog />} />
         <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/favorites" element={<FavoriteList />} />
-       <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/*" element={<Navigate to="/test-task-goit-campers" replace={true} />}/>
+       <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/*" element={<Navigate to={process.env.PUBLIC_URL} replace={true} />}/>
       </Routes>
     </>
   );
