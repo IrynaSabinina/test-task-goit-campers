@@ -9,8 +9,8 @@ export const Header = () => {
     <header>
       <ul>
         <li>
-          <Link to="/test-task-goit-campers/">
-            {pathname === "/test-task-goit-campers/" ?  <button id ="home" className={styles.headerButtonActive} type="button">
+          <Link to="/">
+            {pathname === "/" ?  <button id ="home" className={styles.headerButtonActive} type="button">
               Home
             </button>: <button id ="home" className={styles.headerButton} type="button">
               Home
@@ -19,8 +19,8 @@ export const Header = () => {
           </Link>
         </li>
         <li>
-          <Link to="/test-task-goit-campers/catalog">
-                {pathname === "/test-task-goit-campers/catalog" ?  <button id ="home" className={styles.headerButtonActive} type="button">
+          <Link to="/catalog">
+                {pathname === "/catalog" ?  <button id ="home" className={styles.headerButtonActive} type="button">
               Catalog
             </button>: <button id ="home" className={styles.headerButton} type="button">
               Catalog
@@ -28,8 +28,8 @@ export const Header = () => {
           </Link>
         </li>
         <li>
-          <Link to="/test-task-goit-campers/favorites">
-             {pathname === "/test-task-goit-campers/favorites" ?  <button id ="home" className={styles.headerButtonActive} type="button">
+          <Link to="/favorites">
+             {pathname === "/favorites" ?  <button id ="home" className={styles.headerButtonActive} type="button">
              Favorites
             </button>: <button id ="home" className={styles.headerButton} type="button">
               Favorites

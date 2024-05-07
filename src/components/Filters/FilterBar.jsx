@@ -18,6 +18,7 @@ export const FilterBar = ({ onSubmit }) => {
     }
     onSubmit(searchLocation);
     setSearch("");
+    console.log(event.target.innerText)
     if (event.target.innerText === "LocationReset") {
       setButtonText("Search");
     } else {
@@ -28,9 +29,9 @@ export const FilterBar = ({ onSubmit }) => {
   return (
     <div className={styles.filterContainer}>
       <form id="searchLocation" onSubmit={handleSubmit}>
-        <label className={styles.label}>
-          Location
+        <label for="location" className={styles.label}> Location</label>
           <input
+          id="location"
             type="text"
             name="Location"
             autoComplete="off"
@@ -38,7 +39,7 @@ export const FilterBar = ({ onSubmit }) => {
             value={searchLocation}
             onChange={handleSearchChange}
           />
-        </label>
+       
         <button className={styles.btnSearch} type="submit">
           {buttonText}
         </button>

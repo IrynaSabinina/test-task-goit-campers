@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { CampersList } from "../../components/Campers/CampersList"
 import { FilterBar } from "../../components/Filters/FilterBar"
-import { Header } from "../../components/Header/Header"
 import styles from "../Home/HomePage.module.css"
 import style from "./Catalog.module.css"
 import { useEffect, useState } from "react";
@@ -103,8 +102,6 @@ export const Catalog =()=>{
  
   return (<>
         <div className={styles.homeContainer}>
-
-        <Header/>
         </div>
     <div className={style.catalogContainer}>
         <FilterBar onSubmit={onSubmit} />

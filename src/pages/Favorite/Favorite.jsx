@@ -4,7 +4,6 @@ import { CamperItem } from "../../components/Campers/Camper";
 import { campersSelector } from "../../redux/selectors";
 import { useSelector } from "react-redux";
 import { ModalSuccess } from "../../components/Modal/Modal";
-import { Header } from "../../components/Header/Header";
 
 export const FavoriteList = () => {
   const currentUrl = window.location.href;
@@ -82,7 +81,6 @@ export const FavoriteList = () => {
 
   return (
     <div className={styles.homeContainer} >
-      <Header />
       {favoritesId.length ? (<ul>
         {favList.map(
           ({
