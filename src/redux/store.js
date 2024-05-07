@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { campersReducer } from "./reducers";
+import { configureStore } from '@reduxjs/toolkit';
+import { campersReducer } from './reducers';
 import {
   persistStore,
   FLUSH,
@@ -9,24 +9,20 @@ import {
   PURGE,
   REGISTER,
   persistReducer,
-} from "redux-persist";
-import storage from "redux-persist/lib/storage";
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 const persistCampers = {
-  key: "campers",
+  key: 'root',
   storage,
-  whitelist: ["token", "user"],
 };
 
 const store = configureStore({
   reducer: {
     campers: persistReducer(persistCampers, campersReducer),
   },
-  devTools: process.env.NODE_ENV === "development",
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
+      serializableCheck: false,
     }),
 });
 let persistor = persistStore(store);

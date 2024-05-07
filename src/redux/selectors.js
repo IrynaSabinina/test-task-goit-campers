@@ -11,11 +11,9 @@ export const errorSelector = (state) => state.campers.campers.error;
 export const selectCategory = createSelector(
   [campersSelector, filterSelector],
   (campers, filter) => {
-    console.log(filter);
     const campersinTheList = campers.filter((camper) =>
       camper.details.toLowerCase().includes(filter.toLowerCase())
     );
-    console.log(campersinTheList);
     return campersinTheList;
   }
 );

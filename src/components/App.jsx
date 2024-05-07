@@ -11,7 +11,6 @@ import { Catalog } from "../pages/Catalog/Catalog";
 import { Loader } from "./Loader/Loader";
 import Layout from "./Layout/Layout";
 
-
 export const App = () => {
   localStorage.setItem("favorites", JSON.stringify([]));
   localStorage.setItem("filtered", JSON.stringify([]));
@@ -19,32 +18,41 @@ export const App = () => {
   localStorage.setItem("favoritesId", JSON.stringify([]));
 
   const dispatch = useDispatch();
-  
-
 
   useEffect(() => {
     dispatch(getCampersThunk());
   }, [dispatch]);
- 
+
   return (
     <>
-     <Suspense
+      <Suspense
         fallback={
           <div>
             <Loader />
           </div>
         }
       >
-      <Routes>
+        <Routes>
           <Route path="/" element={<Layout />}>
-
-        <Route index path="/" element={<HomePage />} />
-        <Route basename={process.env.PUBLIC_URL} path="/catalog" element={<Catalog />} />
-        <Route  basename={process.env.PUBLIC_URL} path="/favorites" element={<FavoriteList />} />
-       {/* <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/*" element={<NotFound/>}/> */}
-       <Route  basename={process.env.PUBLIC_URL} path="/*" element={<Navigate to="/" replace={true}/>}/>
+            <Route index path="/" element={<HomePage />} />
+            <Route
+             
+              path="/catalog"
+              element={<Catalog />}
+            />
+            <Route
+              
+              path="/favorites"
+              element={<FavoriteList />}
+            />
+            {/* <Route  basename={process.env.PUBLIC_URL} path="/test-task-goit-campers/*" element={<NotFound/>}/> */}
+            <Route
+              
+              path="/*"
+              element={<Navigate to="/" replace={true} />}
+            />
           </Route>
-      </Routes>
+        </Routes>
       </Suspense>
     </>
   );

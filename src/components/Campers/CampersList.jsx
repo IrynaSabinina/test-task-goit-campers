@@ -5,8 +5,8 @@ import styles from "./CampersList.module.css";
 import { ModalSuccess } from "../Modal/Modal";
 
 
-export const CampersList = ({visibleCampers,id, showAll, pagination,favoritsList, togelModal, closeModal}) => {
-  const filtered=JSON.parse(localStorage.getItem("filtered"))
+export const CampersList = ({visibleCampers,id, pagination,favoritsList, togelModal, closeModal}) => {
+  // const filtered=JSON.parse(localStorage.getItem("filtered"))
 
   return (
     <div>
