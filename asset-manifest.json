@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/test-task-goit-campers/static/css/main.eee21bf1.css",
-    "main.js": "/test-task-goit-campers/static/js/main.2a43faca.js",
+    "main.css": "/test-task-goit-campers/static/css/main.9c486481.css",
+    "main.js": "/test-task-goit-campers/static/js/main.8b7dccaa.js",
     "static/media/icons.svg": "/test-task-goit-campers/static/media/icons.43364723c76cb1ee842630062796a87a.svg",
     "index.html": "/test-task-goit-campers/index.html",
-    "main.eee21bf1.css.map": "/test-task-goit-campers/static/css/main.eee21bf1.css.map",
-    "main.2a43faca.js.map": "/test-task-goit-campers/static/js/main.2a43faca.js.map"
+    "main.9c486481.css.map": "/test-task-goit-campers/static/css/main.9c486481.css.map",
+    "main.8b7dccaa.js.map": "/test-task-goit-campers/static/js/main.8b7dccaa.js.map"
   },
   "entrypoints": [
-    "static/css/main.eee21bf1.css",
-    "static/js/main.2a43faca.js"
+    "static/css/main.9c486481.css",
+    "static/js/main.8b7dccaa.js"
   ]
 }
