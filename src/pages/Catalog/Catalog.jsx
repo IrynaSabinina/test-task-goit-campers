@@ -8,7 +8,6 @@ import { campersSelector } from "../../redux/selectors";
 
 
 export const Catalog =()=>{
-  
 
   const BtnPagination = document.getElementById("paginationBtn");
   const campers = useSelector(campersSelector);

@@ -1,29 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { campersReducer } from './reducers';
-import {
-  persistStore,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-  persistReducer,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-const persistCampers = {
-  key: 'root',
-  storage,
-};
+
+import { persistStore } from 'redux-persist';
+import persistedReducer from './reducers';
 
 const store = configureStore({
   reducer: {
-    campers: persistReducer(persistCampers, campersReducer),
+    persistedReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: false,
     }),
 });
-let persistor = persistStore(store);
-export { store, persistor };
+export const persistor = persistStore(store);
+export default store;

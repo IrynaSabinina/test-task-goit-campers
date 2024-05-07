@@ -4,5 +4,4 @@ export const campersInitialState = {
     isLoading: false,
     error: null,
   },
-  filter: " ",
 };
