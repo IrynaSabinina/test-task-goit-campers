@@ -6,18 +6,18 @@ import { Provider } from 'react-redux';
 import store, { persistor } from './redux/store';
 
 import { PersistGate } from 'redux-persist/integration/react';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter>
       <Provider store={store}>
         <PersistGate loading={<Loader />} persistor={persistor}>
           <App />
         </PersistGate>
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
