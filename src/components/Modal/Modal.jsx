@@ -74,7 +74,7 @@ if (e.target.id === "reviews"){
             </div>
             <div className={styles.sectionTableCalendar}>
               {listValue === "features"?  <Features camper={camper} />:<Reviews camper={camper}/>}
-              <BookingBlock />
+              <BookingBlock id = {id}/>
             </div>
           </div>
         </div>
