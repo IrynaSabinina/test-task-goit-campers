@@ -6,22 +6,22 @@
 }
 .btnSearch {
   padding: 16px 40px 16px 40px;
-  background-color: white;
-  border-radius: 200px;
-  border: 1px solid rgba(71, 84, 103, 0.2);
+  background-color: rgba(228, 72, 72, 1);
   margin-top: 64px;
+  border-radius: 200px;
+  border: none;
+  color: white;
   max-width: 166px;
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.005em;
   text-align: left;
+  cursor: pointer;
 }
 
 .btnSearch:hover {
-  background-color: rgba(228, 72, 72, 1);
-  color: white;
-  cursor: pointer;
+  background-color: rgba(216, 67, 67, 1);
 }
 .label {
   display: flex;
