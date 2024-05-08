@@ -39,7 +39,7 @@ export const FilterBar = ({ onSubmit }) => {
             type="text"
             name="Location"
             autoComplete="off"
-            placeholder="Ukraine, Kyiv"
+            placeholder="City"
             value={searchLocation}
             onChange={handleSearchChange}
           />

@@ -94,18 +94,18 @@ export const Catalog =()=>{
   
   const filteredList= []
   campers.filter((e) => {
-    if((e.location).toLowerCase()=== searchLocation){
+    const city = e.location.toLowerCase().split(" ")[1]
+    if(city=== searchLocation){
       filteredList.push(e)
     } 
   });
   if (filteredList.length===0 ){
-     toast("Sorry, try another location!")
-   }
+    toast("Sorry, try another location!")
+  }
+  
+  setFiltered(filteredList)
+  localStorage.setItem("filtered", JSON.stringify(filteredList));
 
-
-
-     setFiltered(filteredList)
-      localStorage.setItem("filtered", JSON.stringify(filteredList));
 }
  
   return (<>
