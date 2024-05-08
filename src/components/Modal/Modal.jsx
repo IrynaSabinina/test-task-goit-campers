@@ -39,7 +39,7 @@ setListValue(e.target.id)
             </p>
           </div>
 
-          <p className={style.price}>€{camper.price}</p>
+          <p className={style.price}>€{camper.price.toFixed(2)}</p>
         </div>
         <div className={styles.modalInfo}>
           <ul className={styles.gallery}>

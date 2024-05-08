@@ -1,14 +1,14 @@
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 body {
   margin: 0;
-  font-family: "inter", sans-serif;
+  font-family: 'inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: rgba(16, 24, 40, 1);
   padding: 0 64px;
 }
@@ -18,7 +18,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -45,6 +45,7 @@ li {
 button {
   background: transparent;
   border: none;
+  cursor: pointer;
 }
 header {
   margin-bottom: 24px;

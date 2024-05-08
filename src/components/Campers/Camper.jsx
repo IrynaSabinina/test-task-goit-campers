@@ -26,7 +26,7 @@ export const CamperItem = ({
         <div className={styles.titleBlock}>
           <h2>{name}</h2>
           <p>
-            €{price}
+            €{price.toFixed(2)}
             <button id={id} type="button" onClick={favoritsListHendler}>
               <Icons
                 data-id={id}
