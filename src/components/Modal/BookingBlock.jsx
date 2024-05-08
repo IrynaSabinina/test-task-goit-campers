@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 export const BookingBlock =(id)=>{
      const [name, setName] = useState("");
      const [email, setEmail] = useState("");
-     const [bookingDate, setBookingDate] = useState(Date.now())
+     const [bookingDate, setBookingDate] = useState("")
      const [comment, setComment]= useState('')
        const handleSearchChange = (event) => {
        
@@ -18,13 +18,14 @@ export const BookingBlock =(id)=>{
         } if (event.currentTarget.id ==="comment") {
              setComment(event.currentTarget.value.toLowerCase());
         }
+       
   };
     const booked =() =>{
       
 toast.success("You booked your cumper successfully! We wish you amazing trip!")
 setName("")
 setEmail(" ")
-setBookingDate(" ");
+setBookingDate("");
 setComment(" ");
 }
     return (
