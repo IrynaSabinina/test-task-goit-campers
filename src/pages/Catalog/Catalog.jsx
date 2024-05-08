@@ -5,6 +5,7 @@ import styles from "../Home/HomePage.module.css"
 import style from "./Catalog.module.css"
 import { useEffect, useState } from "react";
 import { campersSelector } from "../../redux/selectors";
+import { toast } from "react-toastify";
 
 
 export const Catalog =()=>{
@@ -88,13 +89,21 @@ export const Catalog =()=>{
   localStorage.setItem("favorites", JSON.stringify(favList));
   
   let visibleCampers = filtered[0] ? filtered.slice(0, page * 4): campers?.slice(0, page * 4);
- const onSubmit =(searchLocation)=>{
+ 
+  const onSubmit =(searchLocation)=>{
+  
   const filteredList= []
   campers.filter((e) => {
     if((e.location).toLowerCase()=== searchLocation){
       filteredList.push(e)
-    }
+    } 
   });
+  if (filteredList.length===0 ){
+     toast("Sorry, try another location!")
+   }
+
+
+
      setFiltered(filteredList)
       localStorage.setItem("filtered", JSON.stringify(filteredList));
 }

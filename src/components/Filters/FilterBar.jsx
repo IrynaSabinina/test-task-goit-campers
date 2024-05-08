@@ -15,13 +15,16 @@ export const FilterBar = ({ onSubmit }) => {
     event.preventDefault();
     if (searchLocation.trim() === "") {
       toast.error("Please enter location");
+      
+    } else {
+
+      setSearch("");
+      onSubmit(searchLocation);
+     
     }
-    onSubmit(searchLocation);
-    setSearch("");
-   
-    if (event.target.innerText === "Location\nReset") {
+    if (event.target.innerText === "Location\nReset" && searchLocation.trim().length>0) {
       setButtonText("Search");
-    } else if (event.target.innerText === "Location\nSearch") {
+    } else if (event.target.innerText === "Location\nSearch" && searchLocation.trim().length>0) {
       setButtonText("Reset");
     }
   };

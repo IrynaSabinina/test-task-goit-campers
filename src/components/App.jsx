@@ -10,6 +10,8 @@ import { HomePage } from '../pages/Home/HomePage.jsx';
 import { Catalog } from '../pages/Catalog/Catalog';
 import { Loader } from './Loader/Loader';
 import Layout from './Layout/Layout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const App = () => {
@@ -42,6 +44,7 @@ export const App = () => {
           </Route>
         </Routes>
       </Suspense>
+      <ToastContainer />
     </>
   );
 };
