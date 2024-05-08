@@ -16,6 +16,14 @@ export const ModalSuccess = ({ id, closeModal }) => {
   const changeMarkUp =(e)=>{
 e.preventDefault()
 setListValue(e.target.id)
+
+if (e.target.id === "reviews"){
+  document.getElementById("features").classList.remove("Modal_activeButton__vQD89")
+  document.getElementById("reviews").classList.add("Modal_activeButton__vQD89")
+} if(e.target.id === "features") {
+   document.getElementById("reviews").classList.remove("Modal_activeButton__vQD89")
+  document.getElementById("features").classList.add("Modal_activeButton__vQD89")
+}
   }
 
   return (camper ? (
@@ -59,7 +67,7 @@ setListValue(e.target.id)
 
           <div className={styles.clientsBlock}>
             <div className={styles.clientsBlockHeaders}>
-              <button id="features" onClick={changeMarkUp}>
+              <button id="features" className = {styles.activeButton} onClick={changeMarkUp}>
                 Features
               </button>
               <button id="reviews" onClick={changeMarkUp}>Reviews</button>
